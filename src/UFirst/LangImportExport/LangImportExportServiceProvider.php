@@ -24,7 +24,6 @@ class LangImportExportServiceProvider extends ServiceProvider {
 	 */
 	public function boot(DispatcherContract $events)
 	{
-		parent::boot($events);
 		$this->registerExportToCsvCommand();
 		$this->registerImportFromCsvCommand();
 	}
