@@ -51,7 +51,7 @@ class LangImportExportServiceProvider extends ServiceProvider {
 	}
 
 	private function registerExportToCsvCommand() {
-		$this->app['lang-export.csv'] = $this->app->share(function($app)
+        $this->app->singleton('lang-export.csv', function ($app)
 		{
 			return new ExportToCsvCommand();
 		});
@@ -60,7 +60,7 @@ class LangImportExportServiceProvider extends ServiceProvider {
 	}
 
 	private function registerImportFromCsvCommand() {
-		$this->app['lang-import.csv'] = $this->app->share(function($app)
+        $this->app->singleton('lang-import.csv', function ($app)
 		{
 			return new ImportFromCsvCommand();
 		});
